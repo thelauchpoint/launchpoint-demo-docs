@@ -1,0 +1,24 @@
+{
+  "name": "angular-ssr",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/core/angular-ssr/src",
+  "projectType": "application",
+  "tags": ["core", "deploy"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "angular-ssr:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "angular-ssr:build:development"
+        },
+        "production": {
+          "buildTarget": "angular-ssr:build:production"
+        }
+      }
+    }
+  }
+}

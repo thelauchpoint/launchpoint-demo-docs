@@ -1,0 +1,24 @@
+{
+  "name": "backend-user",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/core/backend-user/src",
+  "projectType": "application",
+  "tags": ["core", "deploy"],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "options": {
+        "buildTarget": "backend-user:build"
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "backend-user:build:development"
+        },
+        "production": {
+          "buildTarget": "backend-user:build:production"
+        }
+      }
+    }
+  }
+}
